@@ -113,6 +113,10 @@ $('.piscoTooltip-example2').piscoToolTip({
 				<li>Chrome 19</li>
 			</ul>
 		</section>
+		<section class="post descarga">
+			<h3>Descarga</h3>
+			<p>Descárga el plugin o haz un fork en Github: <a href="https://github.com/albertofortes/piscotooltip" target="_blank">github.com/albertofortes/piscotooltip</a></p>
+		</section>
 		<footer>
 			<a href="http://www.albertofortes.com" title="Freelance Front End developer">Alberto Fortes</a>, junio de 2012. PiscoTooltip usa el Framework <a href="http://www.piscolabis.es/proyectos/piscoformwork" title="Sencillo framework CSS, HTML5 y Javascript">PiscoFormWork</a> y el theme Minimalistic para Pisco FormWork.
 		</footer>
@@ -156,6 +160,10 @@ $('nav a.navegadores').click(function(){
 });
 $('nav a.personalizado').click(function(){
 	$('body').scrollTo($('section.personalizado'), 500 );
+	return false;
+});
+$('nav a.descarga').click(function(){
+	$('body').scrollTo($('section.descarga'), 500 );
 	return false;
 });
 </script>
