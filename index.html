@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Pisco FormWork :: minimal grid system and ooCSS framework</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" type="text/css" href="assets/css/pisco-formwork.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/minimalistic.formwork.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/pisco.tooltip.css" />
+<link rel="author" href="humans.txt" />
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="assets/css/ie_style.css" /><![endif]-->
+<script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="assets/js/general.js"></script>
+<script type="text/javascript" src="assets/js/pisco.tooltip.js"></script>
+<script type="text/javascript" src="assets/js/piscolabis.framework.js"></script>
+<script type="text/javascript" src="assets/js/jquery.scrollTo-1.4.2-min.js"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+<div class="wrapper">
+	<aside class="grid3 f-l">
+		<h1 class="logo">Pisco Tooltip</h1>
+		<nav>
+			<ul>
+				<li><a href="#" title="" class="intro">Intro</a></li>
+				<li><a href="#" title="" class="uso">Uso básico</a></li>
+				<li><a href="#" title="" class="opciones">Opciones y ejemplos de uso</a></li>
+				<li><a href="#" title="" class="personalizado">Diseños personalizados</a></li>
+				<li><a href="#" title="" class="navegadores">Navegadores testados</a></li>
+				<li><a href="#" title="" class="descarga">Descarga</a></li>
+			</ul>
+		</nav>
+	</aside>
+	<article class="content grid9 f-r">
+		<header>
+			<h1 class="mbxl">A minimal customizable Tooltip in jQuery. Yep, another one.</h1>
+		</header>
+		<section class="post intro">
+			<h3>Intro</h3>
+			<p>Pisco Tooltip es un sencillo plugin de jQuery para crear tooltips. El funcionamiento es el mismo que todos: se muestra el contenido de la etiqueta title de una forma más atractiva y personalizada.</p>
+			<p>Pisco Tooltip usa el mínimo código js necesario para que sea muy fácil de modificar y ampliar si lo necesitas. Y usa un código html y css muy sencillo para que puedas usar tus propios diseños sin apenas conocimientos de CSS.</p>
+			<p>Simplemente un tooltip más, pero muy sencillo de usar.</p>
+		</section>
+		<section class="post uso">
+			<h3>Uso</h3>
+			<p>El uso básico es muy simple, pon en la etiqueta <i>title</i> el texto que sea y este aparecerá en el Tootltip. Eso si, antes debes llamar a la función y a jQuery.</p>
+			<code><pre>&lt;a href="#" title="Este texto aparecerá en el tooltip" class="piscoTooltip" &gt;link con tooltip&lt;/a&gt;</pre></code>
+			<p>Y llamamos al css, a la función y a los scripts, incluyendo jQuery:</p>
+			<code><pre>
+&lt;link rel="stylesheet" type="text/css" href="assets/css/pisco.tooltip.css" />
+&lt;script type="text/javascript" src="assets/js/general.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/js/pisco.tooltip.js">&lt;/script>
+&lt;script>
+$('.piscoTooltip').piscoToolTip();
+&lt;/script></pre>
+			</code>
+			<p>El ejemplo anterior:</p>
+			<p><a href="#" title="Este texto aparecerá en el tooltip" class="piscoTooltip">link con tooltip</a></p>
+		</section>
+		<section class="post opciones">
+			<h3>Opciones y ejemplos de uso</h3>
+			<p>Por defecto el tooltip se alinea debajo del elemento sobre el que se hace la burbuja, pero esto puede modificarse. Los valores por defecto son los siguientes:</p>
+			<blockquote>
+				<p>id: 'piscoToolTip'</p>
+				<p>className: 'tooltip'</p>
+				<p>position: 'bottom'</p>
+				<p>separation: 10</p>
+				<p>delay: 0</p>
+			</blockquote>
+			<p>Se pueden modificar fácilmente. Por ejemplo, un <strong>tootltip con la burbujita colocada a la derecha y con una id definida como 'bubble1'</strong>:</p>
+			<p><a href="#" title="Este tooltip está alineado a la derecha" class="piscoTooltip-example1">link con tooltip con los valores por defecto modificados</a></p>
+			<p>La llamada al tooltip con las opciones modificadas sería:</p>
+			<code><pre>
+&lt;script>
+$('.piscoTooltip-example1').piscoToolTip({
+	position: 'right',
+	id: 'bubble1',
+	separation: 0,
+	delay: 800
+});
+&lt;/script></pre></code>
+			<h4>Otros ejemplos:</h4>
+			<p><a href="#" title="Este tooltip está arriba del elemento" class="piscoTooltip-top">link con tooltip arriba</a></p>
+			<p><a href="#" title="Este tooltip está a la izquierda del elemento" class="piscoTooltip-left">link con tooltip a la izquierda</a></p>
+		</section>
+		<section class="post personalizado">
+			<h3>Diseños personalizados</h3>
+			<p>Por supuesto puedes usar tus propios diseños. Tan sólo tienes que modificar el CSS.</p>
+			<p><a href="#" title="Tooltip alineado a la derecha y con diseño personalizado" class="piscoTooltip-example2">link con tooltip a la derecha y diseño personalizado</a></p>
+			<p>Este ejemplo tiene simplemente el siguiente CCS:</p>
+			<code><pre>
+#bubble2 {position: absolute;}
+#bubble2 .cont {margin-left:15px; padding: 0 10px 0 0; line-height: 58px; background: url(../images/css/bg-bubble1.png) center right no-repeat; color:#8f9da4; font-size: 13px; border-radius:3px; font-weight: bold; text-shadow: 0 1px 1px #fff;}
+#bubble2 .arrow {width: 15px; height: 58px; position: absolute; display: block; background: url(../images/css/arrow-bubble1.png) center left no-repeat; position: absolute; top: 0; left:0;}</pre></code>
+			<p>Bastante sencillo, ¿verdad? La llamada a la función tampoco tiene misterio:</p>
+			<code><pre>
+$('.piscoTooltip-example2').piscoToolTip({
+	position: 'right',
+	className: 'tooltip2',
+	separation:0
+});</pre></code>
+		</section>
+		<section class="post navegadores">
+			<h3>Navegadores testados</h3>
+			<p>Funciona correctamente en los siguientes navegadores</p>
+			<ul class="bullet">
+				<li>Internet Explorer 7</li>
+				<li>Internet Explorer 8</li>
+				<li>Internet Explorer 9</li>
+				<li>Firefox 13</li>
+				<li>Safari 5</li>
+				<li>Chrome 19</li>
+			</ul>
+		</section>
+		<footer>
+			<a href="http://www.albertofortes.com" title="Freelance Front End developer">Alberto Fortes</a>, junio de 2012. PiscoTooltip usa el Framework <a href="http://www.piscolabis.es/proyectos/piscoformwork" title="Sencillo framework CSS, HTML5 y Javascript">PiscoFormWork</a> y el theme Minimalistic para Pisco FormWork.
+		</footer>
+	</article>
+</div><!--wrapper-->
+<script>
+
+$('.piscoTooltip').piscoToolTip();
+$('.piscoTooltip-example1').piscoToolTip({
+	position: 'right',
+	id: 'bubble1',
+	separation: 0,
+	delay: 800
+});
+$('.piscoTooltip-example2').piscoToolTip({
+	position: 'right',
+	className: 'tooltip2',
+	separation:0
+});
+$('.piscoTooltip-left').piscoToolTip({
+    position: 'left'
+});
+$('.piscoTooltip-top').piscoToolTip({
+    position: 'top'
+});
+$('nav a.intro').click(function(){
+	$('body').scrollTo($('section.intro'), 500 );
+	return false;
+});
+$('nav a.uso').click(function(){
+	$('body').scrollTo($('section.uso'), 500 );
+	return false;
+});
+$('nav a.opciones').click(function(){
+	$('body').scrollTo($('section.opciones'), 500 );
+	return false;
+});
+$('nav a.navegadores').click(function(){
+	$('body').scrollTo($('section.navegadores'), 500 );
+	return false;
+});
+$('nav a.personalizado').click(function(){
+	$('body').scrollTo($('section.personalizado'), 500 );
+	return false;
+});
+</script>
+</body>
+</html>
